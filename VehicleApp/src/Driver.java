@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Driver {
 
     Vehicle car;
+    Vehicle bus;
     Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
