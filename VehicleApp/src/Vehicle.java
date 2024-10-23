@@ -1,26 +1,26 @@
 public class Vehicle {
 
- private String model;
- private String make;
- private float price;
- private int passengers;
- private int numWheels;
+ private String model = "ACME Model";
+ private String make = "ACME Make";
+ private float price = 10000;
+ private int passengers = 2;
+ private int numWheels = 2;
 
-  public Vehicle() {
-      this.passengers = 5;
-      this.price = 10000;
-      this.model = "ACME Model";
-      this.make = "ACME Make";
-      this.numWheels = 5;
-  } // End of Default Constructor
+//  public Vehicle() {
+//      this.passengers = 5;
+//      this.price = 10000;
+//      this.model = "ACME Model";
+//      this.make = "ACME Make";
+//      this.numWheels = 5;
+//  } // End of Default Constructor
 
     public Vehicle(String make, String model, float price,
                    int passengers, int numWheels) {
-        this.passengers = passengers;
-        this.price = price;
-        this.model = model;
-        this.make = make;
-        this.numWheels = numWheels;
+        setPassengers(passengers);
+        setPrice(price);
+        setMake(make);
+        setModel(model);
+        setNumWheels(numWheels);
     }
 
     public int getPassengers() {
@@ -28,7 +28,11 @@ public class Vehicle {
     }
 
     public void setPassengers(int passengers) {
-        this.passengers = passengers;
+        if(passengers >= 2 && passengers <= 20)
+                this.passengers = passengers;
+        else
+            System.out.println("Unable to set Passengers, " +
+                    "Must be between 2 and 20");
     }
 
     public float getPrice() {
@@ -36,7 +40,11 @@ public class Vehicle {
     }
 
     public void setPrice(float price) {
-        this.price = price;
+        if(price >= 5000 && price <= 100000)
+            this.price = price;
+        else
+            System.out.println("Unable to set Price, " +
+                    "Must be between 5000 and 100000");
     }
 
     public String getModel() {
@@ -44,7 +52,11 @@ public class Vehicle {
     }
 
     public void setModel(String model) {
-        this.model = model;
+        if(!model.isEmpty())
+            this.model = model;
+        else
+            System.out.println("Unable to set Model, " +
+                    "Must not be Empty");
     }
 
     public String getMake() {
@@ -52,7 +64,11 @@ public class Vehicle {
     }
 
     public void setMake(String make) {
-        this.make = make;
+        if(!make.isEmpty())
+            this.make = make;
+        else
+            System.out.println("Unable to set Make, " +
+                    "Must not be Empty");
     }
 
     public int getNumWheels() {
@@ -60,7 +76,11 @@ public class Vehicle {
     }
 
     public void setNumWheels(int numWheels) {
-        this.numWheels = numWheels;
+        if(numWheels >= 2 && numWheels <= 8)
+            this.numWheels = numWheels;
+        else
+            System.out.println("Unable to set Wheels, " +
+                    "Must be between 5000 and 100000");
     }
 
     public String toString() {
