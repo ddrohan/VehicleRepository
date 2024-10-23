@@ -9,3 +9,22 @@
 // and tell the user which vehicle is best
 //to use for travelling.
 
+// The following Validation Rules should be
+// added to the setter methods
+
+// 1. Passengers should
+// only be between 2 - 20
+
+// 2. The price should
+// be between 5000 and 100000
+
+// 3. The make and model should
+// not be empty
+
+// 4. the number of wheels should
+// be between 2 - 8
+
+
+
+
+
