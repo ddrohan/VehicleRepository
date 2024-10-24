@@ -85,7 +85,7 @@ public class Vehicle {
 
     public String toString() {
 
-        return "Vehicle Details" + "\n" +
+        return
                 "Make : " + make + "," +
                 "Model : " + model + "," +
                 "Price : " + price + "," +

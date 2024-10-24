@@ -24,6 +24,13 @@
 // 4. the number of wheels should
 // be between 2 - 8
 
+// Update the Driver Class to use Arrays
+// Create an Array of Vehicles based on user input
+
+// Then create 2 Vehicle objects and store them in
+// the array
+
+// Then display the Vehicle Array to the console
 
 
 
