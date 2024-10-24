@@ -25,10 +25,9 @@ public class Driver {
         driver.setup();
 
         driver.addVehicle(driver.currentSize);
-        driver.listVehicles();
+        System.out.println(driver.listVehicles());
         driver.addVehicle(driver.currentSize);
-      //  driver.printVehicle();
-        driver.listVehicles();
+        System.out.println(driver.listVehicles());
 
         // driver.checkBestVehicle();
         System.out.print("Exiting System... ");
