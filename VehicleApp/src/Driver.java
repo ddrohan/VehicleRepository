@@ -1,38 +1,79 @@
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public class Driver {
 
-    Vehicle car;
-    Vehicle bus;
+    Vehicle[] vehicles;
+    int currentSize = 0;
+    int maxSize = 0;
     Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
-        System.out.println("Vehicle App V1.0");
+        System.out.println("///////////////////////////////////////");
+        System.out.println("Vehicle App V2.0");
+        System.out.println("///////////////////////////////////////");
+        System.out.println();
+        System.out.println();
+        System.out.println("Please wait while the system loads...");
+        System.out.println();
         Driver driver = new Driver();
-        driver.addVehicle();
-        driver.printVehicle();
-        driver.checkBestVehicle();
+     //Delay for 3 seconds
+      try {
+          TimeUnit.SECONDS.sleep(3);
+      }
+      catch (Exception e) {}
+        driver.setup();
+
+        driver.addVehicle(driver.currentSize);
+        driver.listVehicles();
+        driver.addVehicle(driver.currentSize);
+      //  driver.printVehicle();
+        driver.listVehicles();
+
+        // driver.checkBestVehicle();
+        System.out.print("Exiting System... ");
     } // End of Main
 
-    public void addVehicle() {
+    public void setup() {
+        System.out.print("Please Enter the Number of Vehicles : ");
+        maxSize = input.nextInt();
+        vehicles = new Vehicle[maxSize];
+        System.out.println("Max Number of Vehicles : " +
+                "[" + vehicles.length + "]");
+
+    } // End of setup method
+
+    public void addVehicle(int index) {
+        input.nextLine();
+        System.out.println("Add a Vehicle... ");
         System.out.print("Enter Make : ");
-        String carMake = input.nextLine();
+        String make = input.nextLine();
         System.out.print("Enter Model : ");
-        String carModel = input.nextLine();
+        String model = input.nextLine();
         System.out.print("Enter Price : ");
-        float carPrice = input.nextFloat();
+        float price = input.nextFloat();
         System.out.print("Enter Passengers : ");
-        int carPassengers = input.nextInt();
+        int passengers = input.nextInt();
         System.out.print("Enter Wheels : ");
-        int carWheels = input.nextInt();
+        int wheels = input.nextInt();
 
-        car = new Vehicle(carMake, carModel, carPrice,
-                carPassengers,carWheels);
+        vehicles[index] = new Vehicle(make, model, price,
+                passengers,wheels);
 
+        currentSize++;
     } // End of addVehicle()
 
+    public String listVehicles() {
+        String listOfVehicles = "";
+        for (int i = 0; i < currentSize; i++) {
+            listOfVehicles += i + ": " + vehicles[i] + "\n";
+        }
+        return listOfVehicles;
+    }
+
     public void printVehicle() {
-        System.out.println(car);
+
+        //System.out.println(car);
     } // End of printVehicle()
 
     public void checkBestVehicle() {
