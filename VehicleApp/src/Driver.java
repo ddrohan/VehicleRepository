@@ -15,16 +15,23 @@ public class Driver {
         System.out.println("///////////////////////////////////////");
         System.out.println();
         System.out.println();
-        System.out.println("Please wait while the system loads...");
-        System.out.println();
+        System.out.print("Please wait while the system loads...");
         Driver driver = new Driver();
         //Delay for 3 seconds
         try {
-            TimeUnit.SECONDS.sleep(3);
+            System.out.print("...");
+            TimeUnit.SECONDS.sleep(1);
+            System.out.print("...");
+            TimeUnit.SECONDS.sleep(1);
+            System.out.print("...");
+            TimeUnit.SECONDS.sleep(1);
+            System.out.println("...");
+            System.out.println();
         }
         catch(Exception e) {}
 
         driver.setup();
+        driver.clearScreen();
         driver.addVehicle();
         driver.printVehicles();
         driver.addVehicle();
@@ -89,4 +96,8 @@ public void checkBestVehicle() {
             System.out.println("Sorry, no Vehicle Available");
     } // End of checkBestVehicle method
 
+    public void clearScreen() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+    }
 } // End of Driver Class
