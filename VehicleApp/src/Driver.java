@@ -10,14 +10,26 @@ public class Driver {
     Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
+
+        Driver driver = new Driver();
+        driver.setup();
+        driver.clearScreen();
+
+        driver.addVehicle();
+        driver.printVehicles();
+        driver.addVehicle();
+        driver.printVehicles();
+
+        // driver.checkBestVehicle();
+    } // End of Main
+
+    public void setup() {
         System.out.println("///////////////////////////////////////");
         System.out.println("Vehicle App V2.0");
         System.out.println("///////////////////////////////////////");
         System.out.println();
         System.out.println();
         System.out.print("Please wait while the system loads...");
-        Driver driver = new Driver();
-        //Delay for 3 seconds
         try {
             System.out.print("...");
             TimeUnit.SECONDS.sleep(1);
@@ -30,23 +42,12 @@ public class Driver {
         }
         catch(Exception e) {}
 
-        driver.setup();
-        driver.clearScreen();
-        driver.addVehicle();
-        driver.printVehicles();
-        driver.addVehicle();
-        driver.printVehicles();
-
-        // driver.checkBestVehicle();
-    } // End of Main
-
-    public void setup() {
         System.out.print("Enter Max Number of Vehicles : ");
         maxVehicles = input.nextInt();
 
         vehicles = new Vehicle[maxVehicles];
         System.out.println("Max Vehicles : ["+ vehicles.length + "]");
-    }
+    } // End of setup() method
 
     public void addVehicle() {
         System.out.println("Please Enter Vehicle Details...");
