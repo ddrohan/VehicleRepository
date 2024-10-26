@@ -51,6 +51,7 @@ public class Driver {
 
     public void addVehicle() {
         System.out.println("Please Enter Vehicle Details...");
+
         input.nextLine();
         System.out.print("Enter Make : ");
         String make = input.nextLine();
