@@ -78,7 +78,7 @@ public class Vehicle {
                 "Model : " + model + "," +
                 "Price : " + price + "," +
                 "Passengers : " + passengers + "," +
-                "Registration : " + registration;
+                "Vehicle Reg : " + registration;
     } // End of toString()
 
     public String getRegistration() {

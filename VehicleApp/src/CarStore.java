@@ -1,7 +1,7 @@
 public class CarStore
 {
-    Vehicle[] vehicles;
-    int currentVehicles = 0;
+    private Vehicle[] vehicles;
+    private int currentVehicles = 0;
 
     public CarStore(int numberVehicles) {
         vehicles = new Vehicle[numberVehicles];
