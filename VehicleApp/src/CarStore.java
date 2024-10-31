@@ -36,4 +36,44 @@ public class CarStore
             return listOfVehicles;
         }
     }
+
+    public Vehicle getMostExpensiveVehicle() {
+        if (!isEmpty()) {
+            Vehicle mostExpensiveVehicle = vehicles[0];
+            for (int i = 1; i < currentVehicles; i++) {
+                if (vehicles[i].getPrice() > mostExpensiveVehicle.getPrice())
+                    mostExpensiveVehicle = vehicles[i];
+            }
+            return mostExpensiveVehicle;
+        } else {
+            return null;
+        }
+    }
+    ////////////////////////////////////////////////
+
+    public Vehicle find(String reg) {
+        Vehicle foundVehicle = null;
+
+        if(!isEmpty()) {
+            for(int i = 0; i < currentVehicles; i++)
+                if(vehicles[i]
+                        .getRegistration()
+                        .equals(reg))
+                    foundVehicle = vehicles[i];
+        }
+
+       return foundVehicle;
+    }
+
+    public boolean updatePrice(float newPrice, String reg) {
+
+        if (!isEmpty()) {
+            Vehicle v = find(reg);
+                if(v!= null) {
+                    v.setPrice(newPrice);
+                    return true;
+                }
+        }
+        return false;
+    }
 }

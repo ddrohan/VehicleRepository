@@ -23,6 +23,9 @@ public class Driver {
                ---------
                   1) List Car Store Vehicles
                   2) Add a Vehicle
+                  3) Find Most Expensive Vehicle
+                  4) Search for Vehicle (Registration)
+                  5) Update Vehicle Price
                   0) Exit
                ==>> """);
         int option = input.nextInt();
@@ -39,6 +42,9 @@ public class Driver {
             switch (option){
                 case 1 -> printVehicles();
                 case 2 -> addVehicle();
+                case 3 -> findMostExpensive();
+                case 4 -> findVehicleReg();
+                case 5 -> updatePrice();
                 case -88 -> dummyData();
                 default -> System.out.println("Invalid option entered: " + option);
             }
@@ -56,6 +62,54 @@ public class Driver {
         System.out.println("Exiting System...bye");
         System.exit(0);
     }
+
+    private void updatePrice() {
+        input.nextLine(); // Bug fix
+        System.out.print("Enter Reg : ");
+        String reg = input.nextLine();
+        System.out.print("Enter New Price : ");
+        float price = input.nextFloat();
+
+        boolean isChanged = carStore.updatePrice(price,reg);
+
+        if (isChanged){
+            System.out.println("Update Successful ");
+        }
+        else{
+            System.out.println("Update NOT Successful");
+        }
+    }
+
+    private void findVehicleReg() {
+        System.out.println("///////////////////////////////////////");
+        System.out.println("Search Vehicle Registration");
+        System.out.println("///////////////////////////////////////");
+        input.nextLine(); // Required for bug in Scanner Class
+        System.out.print("Enter Reg to Search for =>>");
+        String reg = input.nextLine();
+
+        Vehicle foundVehicle = carStore.find(reg);
+
+        if(foundVehicle != null)
+            System.out.print(foundVehicle);
+        else
+            System.out.print("No Vehicle found with Reg : " + reg);
+    }
+
+    private void findMostExpensive() {
+        System.out.println("///////////////////////////////////////");
+        System.out.println("Most Expensive Vehicle");
+        System.out.println("///////////////////////////////////////");
+
+        Vehicle mostExpensiveVehicle = carStore.getMostExpensiveVehicle();
+        if (mostExpensiveVehicle != null) {
+            System.out.println("The most expensive Vehicle is:  " + mostExpensiveVehicle);
+        }
+        else{
+            System.out.println("There are no Vehicles in the Car Store.");
+        }
+    }
+
     ///////////////////////////////////////////////////////
     public void setup() {
         System.out.println("///////////////////////////////////////");
