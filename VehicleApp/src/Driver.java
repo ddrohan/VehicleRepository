@@ -61,11 +61,11 @@ public class Driver {
         float price = input.nextFloat();
         System.out.print("Enter Passengers : ");
         int passengers = input.nextInt();
-        System.out.print("Enter Wheels : ");
-        int wheels = input.nextInt();
+        System.out.print("Enter Registration : ");
+        String reg = input.nextLine();
 
         vehicles[currentVehicles] = new Vehicle(make, model, price,
-                passengers,wheels);
+                passengers,reg);
         currentVehicles++;
 
     } // End of addVehicle()

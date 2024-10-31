@@ -3,24 +3,16 @@ public class Vehicle {
  private String model = "ACME Model";
  private String make = "ACME Make";
  private float price = 10000;
- private int passengers = 2;
- private int numWheels = 2;
-
-//  public Vehicle() {
-//      this.passengers = 5;
-//      this.price = 10000;
-//      this.model = "ACME Model";
-//      this.make = "ACME Make";
-//      this.numWheels = 5;
-//  } // End of Default Constructor
+ private int passengers = 4;
+ private String registration = "A12345";
 
     public Vehicle(String make, String model, float price,
-                   int passengers, int numWheels) {
+                   int passengers, String registration) {
         setPassengers(passengers);
         setPrice(price);
         setMake(make);
         setModel(model);
-        setNumWheels(numWheels);
+        setRegistration(registration);
     }
 
     public int getPassengers() {
@@ -71,16 +63,12 @@ public class Vehicle {
                     "Must not be Empty");
     }
 
-    public int getNumWheels() {
-        return numWheels;
-    }
-
-    public void setNumWheels(int numWheels) {
-        if(numWheels >= 2 && numWheels <= 8)
-            this.numWheels = numWheels;
+    public void setRegistration(String reg) {
+        if(!registration.isEmpty())
+            this.registration = reg;
         else
-            System.out.println("Unable to set Wheels, " +
-                    "Must be between 5000 and 100000");
+            System.out.println("Unable to set Registration, " +
+                    "Must not be Empty");
     }
 
     public String toString() {
@@ -90,7 +78,10 @@ public class Vehicle {
                 "Model : " + model + "," +
                 "Price : " + price + "," +
                 "Passengers : " + passengers + "," +
-                "Wheels : " + numWheels;
+                "Registration : " + registration;
     } // End of toString()
 
+    public String getRegistration() {
+        return registration;
+    }
 } // End of Class Vehicle
