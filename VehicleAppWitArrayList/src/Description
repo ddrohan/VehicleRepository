@@ -1,0 +1,37 @@
+// Vehicle App Version 2.0.1
+
+// Write an Application that allows the user to
+// create 3
+// Vehicle Objects, a Car, a Bus and an eBike.
+
+// The program should ask the user for a number
+// of passengers
+// and tell the user which vehicle is best
+//to use for travelling.
+
+// The following Validation Rules should be
+// added to the setter methods
+
+// 1. Passengers should
+// only be between 2 - 20
+
+// 2. The price should
+// be between 5000 and 100000
+
+// 3. The make and model should
+// not be empty
+
+// 4. the number of wheels should
+// be between 2 - 8
+
+// Update the Driver Class to use Arrays
+// Create an Array of Vehicles based on user input
+
+// Then create 2 Vehicle objects and store them in
+// the array
+
+// Then display the Vehicle Array to the console
+
+
+
+
