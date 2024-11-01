@@ -132,10 +132,7 @@ public class Driver {
         }
         catch(Exception e) {}
 
-        System.out.print("Enter Max Number of Vehicles : ");
-        int maxVehicles = input.nextInt();
-
-        carStore = new CarStore(maxVehicles);
+        carStore = new CarStore();
 
     } // End of setup() method
 
